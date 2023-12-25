@@ -17,12 +17,101 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  height: 100vh;
+  /* color: rgb(var(--foreground-rgb));
+  height: fit-content;
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+  /* background-color: white;
+  height: 100vh; */
+  background-color: black;
+}
+
+.left{
+  min-width: 28rem;
+}
+.stripe-background {
+  background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      white 60px
+    ),
+    linear-gradient(
+      10deg,
+      royalblue,
+      #5768df,
+      #8164d7,
+      #aa60c8,
+      #cc60b3,
+      #e3689c,
+      #ed7889,
+      #ee8c7e,
+      #e99e7c,
+      #e4ac7f,
+      #e0b585,
+      burlywood
+    );
+  /* Background Text Clip */
+  /* webkit vendor prefix start */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* webkit vendor prefix end */
+  background-clip: text;
+  animation: stripe-text-animation 3s alternate infinite;
+}
+
+/* Stripe Text Animation */
+@keyframes stripe-text-animation {
+  from {
+    background-position: 0px 100px;
+  }
+
+  to {
+    background-position: 300px 300px;
+  }
+}
+
+@keyframes gradient-text-animation {
+  from {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0 50%;
+  }
+}
+
+.item{
+  border-radius: 5rem;
+}
+
+
+/* .hero-content .heading {
+  font-family: Zuume,sans-serif;
+  font-size: calc(-13.71429px + 14.28571vw);
+  font-weight: 900;
+  letter-spacing: .02em;
+  line-height: 80%;
+} */
+li{
+  font-size: 1.2rem;
+    color: #EFECE6;
+    font-weight: bold;
+}
+
+.logo{
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.whatwedo{
+  color: white;
+  -webkit-text-fill-color: rgb(0, 0, 0); /* Will override color (regardless of order) */
+  -webkit-text-stroke: 3px rgb(255, 255, 255);
 }
