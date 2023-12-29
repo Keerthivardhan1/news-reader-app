@@ -1,13 +1,13 @@
 'use client'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { collection, addDoc } from "firebase/firestore";
-import { db } from './firebase';
+// import { collection, addDoc } from "firebase/firestore";
+// import { db } from './firebase';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import Link from 'next/link';
 import Landing from './landing/page';
 
-const auth = getAuth();
+// const auth = getAuth();
 
 
 export default function LandingPage() {
