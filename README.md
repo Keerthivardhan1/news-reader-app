@@ -1,4 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img width="943" alt="nr1" src="https://github.com/Keerthivardhan1/news-reader-app/assets/110013820/5356b7e5-297e-46cf-83b5-859e4097c885">
+<img width="935" alt="nr2" src="https://github.com/Keerthivardhan1/news-reader-app/assets/110013820/b1b24589-7ae1-434e-b6e6-025b79562209">
+<img width="927" alt="nr3" src="https://github.com/Keerthivardhan1/news-reader-app/assets/110013820/2db74dc7-69ad-44b1-953b-218be14affba">
+<img width="916" alt="nr4" src="https://github.com/Keerthivardhan1/news-reader-app/assets/110013820/c896855c-a2cd-4c26-b7be-1d1f498609c8">
 
 ## Getting Started
 
