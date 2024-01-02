@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
 import getNews from "../libs/getNews";
 
-const news2 = async () => {
+const news2 =  () => {
   const router = useRouter();
 
   // let temp = [
@@ -47,7 +48,7 @@ const news2 = async () => {
   //   },
   // ];
 
-     let newsData = await getNews();
+     let newsData = getNews();
   // let newsData = temp;
   return (
     <div className="border-2 border-black w-full flex flex-wrap flex-col items-center">

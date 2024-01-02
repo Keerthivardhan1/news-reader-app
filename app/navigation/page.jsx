@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
-export const Navbar = () => {
+const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const scrollToSignIn = () => {
     const signInSection = document.getElementById('signInSection');
@@ -89,3 +89,5 @@ export const Navbar = () => {
   </div>
   )
 }
+
+export default Navbar;
