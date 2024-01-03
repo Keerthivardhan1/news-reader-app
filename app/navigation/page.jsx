@@ -1,18 +1,21 @@
 'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
+import { signOut } from 'firebase/auth';
+
 
 const Navbar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const scrollToSignIn = () => {
-    const signInSection = document.getElementById('signInSection');
+  // const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  // const [text , settext] = useState("Sign In")
 
-    if (signInSection) {
-      signInSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const user = typeof window !== 'undefined' ? sessionStorage.getItem("user") : null;
+  const handleAuth = async ()=>{
+    signOut(auth)
+  }
+
+  // if(user) settext("Sign Out")
   return (
-    <div className="navbar  bg-black px-20 pt-3 ">
+    <div className="navbar z-10  bg-black px-20 pt-3  backdrop-blur-2xl ">
     <div className="navbar-start">
       <div className="dropdown">
         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -74,17 +77,18 @@ const Navbar = () => {
     </div>
     <div className="navbar-end">
       <button className="btn stripe-background bg-white text-black font-extrabold transition duration-300 ease-in-out hover:bg-black hover:text-white hover:border-3 hover:border-white"
-      onClick={scrollToSignIn}
+      onClick={handleAuth}
       >
-        Sign In
+        SignIn
       </button>
-      {isLoggedIn && (
-        <div className="avatar">
+      {/* Display avatar if logged in  */}
+      {/* {isLoggedIn && ( */}
+        {/* <div className="avatar">
           <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="User Avatar" />
           </div>
-        </div>
-      )}
+        </div> */}
+      {/* )} */}
     </div>
   </div>
   )

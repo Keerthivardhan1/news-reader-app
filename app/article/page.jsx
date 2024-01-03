@@ -19,6 +19,7 @@ const article = () => {
   }
   return (
     <div>
+      <span>Dummy data </span>
       <main className='flex flex-col items-center p-4 gap-4 w-full'>
       <img src={temp.urlToImage} alt="image"
       className='skeleton w-11/12'

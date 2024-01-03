@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { auth } from '../firebase'
+import { useRouter } from 'next/navigation';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,7 +11,9 @@ import { motion, useScroll, useTransform } from "framer-motion"
 export const SignIn = () => {
   // toast = ToastContainer()
     // const Oauth = getAuth();
+    const router = useRouter()
     const { scrollYProgress } = useScroll()
+    const [message , setmessage] = useState("")
     const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
     const [user, setUser] = useState({ email: "", password: "" })
     const signup = async (e) => {
@@ -21,18 +24,13 @@ export const SignIn = () => {
     
           await createUserWithEmailAndPassword(auth, user.email, user.password)
             .then((userCredential) => {
-              // Signed up 
-              // toast is not working ?
-              toast('🦄 ' + user.email + "Successfully Created", {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-                });
+       
+
+              toast("created")
+              setmessage("Account Successfully Created")
+              sessionStorage.setItem("user",true)
+              router.push("/news2")
+
     
               // ...
             })
@@ -40,6 +38,7 @@ export const SignIn = () => {
               const errorCode = error.code;
               const errorMessage = error.message;
               console.log("errror = ", errorMessage);
+              setmessage(errorMessage)
               // ..
             });
     
@@ -56,7 +55,6 @@ export const SignIn = () => {
               <div className="mb-6">
                 <label
                   className="mr-4 text-mainText font-bold inline-block mb-2"
-                  for="email"
                 >
                   Email
                 </label>
@@ -70,7 +68,6 @@ export const SignIn = () => {
               <div className="">
                 <label
                   className="mr-4 text-mainText font-bold inline-block mb-2"
-                  for="password"
                 >
                   Password
                 </label>
@@ -83,10 +80,11 @@ export const SignIn = () => {
               </div>
               <span className="text-sm text-gray-700 inline-block mt-4 hover:text-indigo-600 hover:underline hover:cursor-pointer transition duration-200">
                 forget password
+               
               </span>
+              <p> {message}</p>
               <button className="w-full mt-6 text-indigo-50 font-bold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300"
-              onClick={ signup
-            }
+              onClick={ signup}
               >
                 Sign Up
               </button>

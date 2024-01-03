@@ -79,10 +79,10 @@ export const Footer = () => {
           </div>
         </div>
 
-        <hr className="my-6 border-gray-200 md:my-8 dark:border-gray-700" />
+        <hr className="mt-6 mb-2 border-gray-200 md:my-8 dark:border-gray-700" />
       </div>
 
-      <div classNamename="flex items-center justify-between">
+      <div className="flex items-center justify-between">
         <h1 className="text-blue-500 font-extrabold leading-3 tracking-widest ">
           Epic Pulse
         </h1>
@@ -102,7 +102,7 @@ export const Footer = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://github.com/Keerthivardhan1/news-reader-app/tree/main"
             className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
             aria-label="Github"
           >

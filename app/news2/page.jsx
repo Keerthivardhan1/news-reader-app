@@ -3,53 +3,59 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import getNews from "../libs/getNews";
+import { SignIn } from "../components/SignIn";
 
 const news2 =  () => {
   const router = useRouter();
 
-  // let temp = [
-  //   {
-  //     urlToImage:
-  //       "https://static.toiimg.com/thumb/msid-106320247,width-1070,height-580,imgsize-1521842,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
-  //     title:
-  //       "When Tesla robot attacked an engineer at the company's Texas factory",
-  //     description:
-  //       "A Tesla engineer was attacked by an assembly robot at the Giga Texas factory. The incident occurred when the robot malfunctioned while grabbing and moving car parts. The robot pinned the engineer, leaving a trail of blood. The engineer suffered an open wound …",
-  //   },
-  //   {
-  //     urlToImage:
-  //       "https://wp.technologyreview.com/wp-content/uploads/2023/12/better-handf.jpg?resize=1200,600",
-  //     title:
-  //       "When Tesla robot attacked an engineer at the company's Texas factory",
-  //     description:
-  //       "A Tesla cident occurred when the robot malfunctioned while grabbing and moving car parts. The robot pinned the engineer, leaving a trail of blood. The engineer suffered an open wound …",
-  //   },
-  //   {
-  //     urlToImage:
-  //       "https://www.fairobserver.com/wp-content/uploads/2023/12/Person-Ai-Work.jpg",
-  //     title:
-  //       "When Tesla robot attacked an engineer at the company's Texas factory",
-  //     description:
-  //       "A Tesla engineer was attacked by an assembly robot at the Giga Texas factory. The incident occurred when the robot malfunctioned while grabbing and moving car parts. The robot pinned the engineer, leaving a trail of blood. The engineer suffered an open wound …",
-  //   },
-  //   {
-  //     urlToImage:
-  //       "https://finbold.com/app/uploads/2023/12/1000-invested-in-Tesla-stock-at-start-of-2023-returned.jpg",
-  //     title: "When Tesla he company's Texas factory",
-  //     description:
-  //       "A Tesla engineer was attacked by an assembly robot at the Giga Texas factory. The incident occurred when the robot malfunctioned while grabbing and moving car parts. The robot pinned the engineer, leaving a trail of blood. The engineer suffered an open wound …",
-  //   },
-  //   {
-  //     urlToImage: "https://c.biztoc.com/p/6f59bedaee654497/s.webp",
-  //     title:
-  //       "When Tesla robot attacked an engineer at the company's Texas factory",
-  //     description:
-  //       " The robot pinned the engineer, leaving a trail of blood. The engineer suffered an open wound …",
-  //   },
-  // ];
+  let temp = [
+    {
+      urlToImage:
+        "https://static.toiimg.com/thumb/msid-106320247,width-1070,height-580,imgsize-1521842,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+      title:
+        "When Tesla robot attacked an engineer at the company's Texas factory",
+      description:
+        "A Tesla engineer was attacked by an assembly robot at the Giga Texas factory. The incident occurred when the robot malfunctioned while grabbing and moving car parts. The robot pinned the engineer, leaving a trail of blood. The engineer suffered an open wound …",
+    },
+    {
+      urlToImage:
+        "https://wp.technologyreview.com/wp-content/uploads/2023/12/better-handf.jpg?resize=1200,600",
+      title:
+        "When Tesla robot attacked an engineer at the company's Texas factory",
+      description:
+        "A Tesla cident occurred when the robot malfunctioned while grabbing and moving car parts. The robot pinned the engineer, leaving a trail of blood. The engineer suffered an open wound …",
+    },
+    {
+      urlToImage:
+        "https://www.fairobserver.com/wp-content/uploads/2023/12/Person-Ai-Work.jpg",
+      title:
+        "When Tesla robot attacked an engineer at the company's Texas factory",
+      description:
+        "A Tesla engineer was attacked by an assembly robot at the Giga Texas factory. The incident occurred when the robot malfunctioned while grabbing and moving car parts. The robot pinned the engineer, leaving a trail of blood. The engineer suffered an open wound …",
+    },
+    {
+      urlToImage:
+        "https://finbold.com/app/uploads/2023/12/1000-invested-in-Tesla-stock-at-start-of-2023-returned.jpg",
+      title: "When Tesla he company's Texas factory",
+      description:
+        "A Tesla engineer was attacked by an assembly robot at the Giga Texas factory. The incident occurred when the robot malfunctioned while grabbing and moving car parts. The robot pinned the engineer, leaving a trail of blood. The engineer suffered an open wound …",
+    },
+    {
+      urlToImage: "https://c.biztoc.com/p/6f59bedaee654497/s.webp",
+      title:
+        "When Tesla robot attacked an engineer at the company's Texas factory",
+      description:
+        " The robot pinned the engineer, leaving a trail of blood. The engineer suffered an open wound …",
+    },
+  ];
 
-     let newsData = getNews();
-  // let newsData = temp;
+    //  let newsData = getNews();
+  let newsData = temp;
+  
+  const user = sessionStorage.getItem("user")
+  
+  if(!user) return <SignIn/>
+
   return (
     <div className="border-2 border-black w-full flex flex-wrap flex-col items-center">
       <h1 className="text-mainText font-bold font-xl text-2xl my-5">
@@ -129,6 +135,8 @@ const news2 =  () => {
 
         </section>       
       </section>
+      <h1>
+To ensure smooth deployment of the application to production in alignment with NewsAPI, it is essential to upgrade the plan. Meanwhile for assignment, I am utilizing sample data that is readily available.</h1>
     </div>
   );
 };
