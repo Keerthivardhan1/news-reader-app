@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
 
 
 const Navbar = () => {
